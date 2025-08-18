@@ -897,4 +897,33 @@ footer {
   article h2, .blog-post h3 {
     font-size: 1.5rem;
   }
+
+}
+/* Navigation container */
+nav {
+  display: flex;
+  flex-wrap: wrap;  /* allows links to go to next line if too long */
+  justify-content: space-between; /* distributes links evenly */
+  padding: 10px;
+  background-color: #4B0082; /* example color */
+}
+
+/* Navigation links */
+nav a {
+  margin: 5px;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+/* Media query for small screens */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;  /* stack links vertically */
+    align-items: flex-start;
+  }
+
+  nav a {
+    margin: 5px 0;
+  }
 }
