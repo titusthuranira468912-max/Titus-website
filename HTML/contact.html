@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | Titus Thuranira</title>
+   <meta name="description" content="This page contains Personal contacts of Titus Thuranira">
+   <meta name="author" content="Titus Thuranira">
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <div id="clock-container">
+    <span id="clock"></span>
+    <span id="day"></span>
+  </div>
+
+  <nav class="navbar">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="resume.html">Resume</a></li>
+      <li><a href="skills.html">Skills</a></li>
+      <li><a href="photos.html">Photos</a></li>
+      <li><a href="bible.html">Bible App</a></li>
+      <li><a href="motivation.html">Motivation</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="testimonials.html">Testimonials</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+      <li><a href="address.html">Address</a></li>
+      <li><a href="biblestudies.html">Bible Studies</a></li>
+    </ul>
+  </nav>
+
+  <main class="page-content">
+    <section>
+      <h2>Contact Me</h2>
+      <p>Have a question, idea, or opportunity you'd like to share? Get in touch below.</p>
+
+      <form id="contact-form">
+  <input type="text" name="name" placeholder="Name" required>
+  <input type="email" name="email" placeholder="Email" required>
+  <textarea name="message" placeholder="Message" required></textarea>
+  <button type="submit">Send</button>
+</form>
+
+      <p><b>You can also reach me through the address placed in address webpage.</b></p>
+      
+    </section>
+    
+    <section id="feedbacks-section">
+  <h2>Feedback Messages</h2>
+
+  <div id="feedback-login">
+    <input type="password" id="feedback-password" placeholder="Enter password">
+    <button id="feedback-login-btn">Login</button>
+  </div>
+
+  <div id="feedback-list" style="display:none;"></div>
+</section>
+
+  </main>
+  <script src="combined.js"></script> 
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script src="email.js"></script> <!-- This is your EmailJS script -->
+
+</body>
+</html>

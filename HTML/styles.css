@@ -1,0 +1,900 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(145deg, #f0f8ff, #ffe4e1);
+  color: #333;
+  padding-top: 60px;
+  padding-left: 10px;
+  padding-right: 10px;
+  line-height: 1.7;
+}
+
+/* Clock + Day */
+#clock-container {
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+  background: #222;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-weight: bold;
+  z-index: 1000;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Navigation Bar */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  z-index: 999;
+}
+
+.navbar ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style: none;
+  padding: 10px 0;
+}
+
+.navbar li {
+  margin: 0 15px;
+}
+
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 8px 14px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.navbar a:hover,
+.navbar a.active {
+  background: #fff;
+  color: #2575fc;
+}
+
+/* Page Layout */
+.page-content {
+  max-width: 1200px;
+  margin: auto;
+  padding: 30px 20px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  color: #6a11cb;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.welcome-img {
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Section Titles */
+h2 {
+  font-size: 2rem;
+  color: #2575fc;
+  margin-bottom: 15px;
+}
+
+h3 {
+  color: #444;
+  margin-top: 25px;
+}
+
+/* Skills Grid */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.skill-item {
+  background: #fefefe;
+  border: 2px solid #e0e0e0;
+  border-left: 8px solid #2575fc;
+  padding: 15px;
+  border-radius: 8px;
+  transition: transform 0.3s;
+}
+
+.skill-item:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Photo Gallery */
+.photo-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.gallery-img {
+  width: 80%;
+  max-height: 500px;
+  max-width:400px;
+  margin: auto;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.1s;
+}
+
+.gallery-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Forms */
+form {
+  margin-top: 20px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 2px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+button {
+  background: #2575fc;
+  color: white;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: #6a11cb;
+}
+
+/* Testimonials */
+.testimonial {
+  background: #f0f8ff;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-left: 5px solid #6a11cb;
+  border-radius: 8px;
+}
+
+/* Blog & Bible Study Articles */
+.blog-post,
+.bible-study {
+  border-left: 5px solid #2575fc;
+  padding-left: 15px;
+  margin-bottom: 25px;
+}
+
+/* Address List */
+.address-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.address-list li {
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+/* Responsive Fixes */
+@media (max-width: 768px) {
+  .navbar ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #clock-container {
+    position: static;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+}
+.bible-inputs input, .bible-inputs button { margin-right: 5px; padding: 6px; }
+.bible-nav button { margin-right: 5px; padding: 6px 12px; background:#007bff; color:white; border:none; cursor:pointer; }
+.bible-nav button:hover { background:#0056b3; }
+#favorites-list li { background:#e3e3e3; margin-bottom:3px; padding:5px; border-radius:3px; }
+#favorites-list li:hover { background:#d1d1ff; }
+
+
+
+
+
+
+
+
+/* General Reset & Body */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  background: #f4f4f4;
+  color: #333;
+  padding: 20px;
+}
+
+/* Headings */
+h1, h2, h3, h4 {
+  margin-bottom: 15px;
+  color: #222;
+}
+
+/* Links */
+a {
+  text-decoration: none;
+  color: #007bff;
+}
+a:hover {
+  color: #0056b3;
+}
+
+/* Forms */
+form {
+  width: 100%;
+  max-width: 400px;
+  margin: 20px auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+form input, form textarea, form button {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+form button {
+  background: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+form button:hover {
+  background: #0056b3;
+}
+
+/* Feedback List */
+#feedback-list .feedback-item {
+  background: #fff;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+/* Bible App */
+#bible-app {
+  max-width: 600px;
+  margin: 20px auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.bible-inputs input, .bible-inputs button {
+  margin-right: 5px;
+  padding: 8px;
+}
+.bible-nav button {
+  margin-right: 5px;
+  padding: 8px 12px;
+  background: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+.bible-nav button:hover {
+  background: #0056b3;
+}
+#verse-display {
+  margin-top: 15px;
+  padding: 10px;
+  background: #f9f9f9;
+  border-radius: 5px;
+  min-height: 50px;
+}
+#favorites-list li {
+  background: #e3e3e3;
+  margin-bottom: 3px;
+  padding: 5px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+#favorites-list li:hover { background: #d1d1ff; }
+
+/* Slideshow / Images */
+.slideshow-container {
+  max-width: 100%;
+  position: relative;
+  margin: 20px auto;
+  overflow: hidden;
+  border-radius: 8px;
+}
+.slides {
+  display: none;
+  width: 100%;
+  border-radius: 8px;
+}
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  padding: 10px;
+  color: #fff;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 50%;
+  user-select: none;
+  transform: translateY(-50%);
+
+}
+.prev { left: 10px; background: rgba(0,0,0,0.5); }
+.next { right: 10px; background: rgba(0,0,0,0.5); }
+.prev:hover, .next:hover { background: rgba(0,0,0,0.7); }
+
+/* Sections */
+section {
+  margin: 20px 0;
+  padding: 15px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Responsive Media Queries */
+@media (max-width: 768px) {
+  .bible-inputs input, .bible-inputs button,
+  form input, form textarea, form button {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .bible-nav button {
+    width: 48%;
+    margin-bottom: 5px;
+  }
+  .slideshow-container { max-height: 300px; }
+}
+
+@media (max-width: 480px) {
+  body { padding: 10px; }
+  h1, h2 { font-size: 1.5em; }
+  .bible-nav button { width: 100%; margin-bottom: 5px; }
+  .prev, .next { font-size: 16px; padding: 8px; }
+}
+.video-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 40px 20px;
+}
+
+.video-box {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    background-color: #000;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.video-box video {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 12px;
+}
+
+.video-box:hover {
+    transform: scale(1.03);
+    cursor: pointer;
+}
+.motivation-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 40px 20px;
+}
+
+.motivation-card {
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    overflow: hidden;
+    background-color: #fff;
+    transition: transform 0.3s;
+}
+
+.motivation-card:hover {
+    transform: scale(1.03);
+    cursor: pointer;
+}
+
+.motivation-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-bottom: 1px solid #ddd;
+}
+
+.motivation-caption {
+    padding: 15px;
+    font-size: 16px;
+    color: #333;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+/* Fullscreen Modal */
+.motivation-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    padding-top: 60px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.9);
+}
+
+.motivation-modal-content {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 80vh;
+    border-radius: 10px;
+}
+
+.motivation-modal:target {
+    display: block;
+}
+
+.motivation-close {
+    position: absolute;
+    top: 30px;
+    right: 50px;
+    color: #fff;
+    font-size: 35px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.motivation-close:hover {
+    color: #f00;
+}
+.list-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+    gap: 40px;
+}
+
+.list-box {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    width: 100%;
+    max-width: 1000px;
+}
+
+.list-box li {
+    background-color: #f0f0f0;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease, background-color 0.3s;
+}
+
+.list-box li:hover {
+    transform: scale(1.03);
+    background-color: #e0e0ff;
+}
+
+.list-box li a {
+    display: block;
+    padding: 20px;
+    text-align: center;
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/* Destination content styling */
+.destination-section {
+    padding: 40px 20px;
+    max-width: 900px;
+    margin: 40px auto;
+    background-color: #fafafa;
+    border-left: 5px solid #333;
+    border-radius: 10px;
+}
+
+.destination-section h2 {
+    margin-top: 0;
+    color: #222;
+}
+
+.destination-section p {
+    color: #444;
+    line-height: 1.6;
+}
+main {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 0 20px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  animation: fadeIn 0.8s ease;
+}
+
+main h2 {
+  margin-top: 25px;
+  font-size: 1.6rem;
+  color: #003366;
+  position: relative;
+}
+
+main h2::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 3px;
+  background-color: #ffcc00;
+  margin-top: 5px;
+  border-radius: 2px;
+}
+
+/* Paragraphs and Lists */
+main p {
+  margin: 15px 0;
+  font-size: 1rem;
+  color: #444;
+}
+
+main ul {
+  margin: 10px 0 20px 20px;
+  padding-left: 20px;
+}
+
+main ul li {
+  margin-bottom: 10px;
+}
+
+/* Footer */
+footer {
+  margin-top: 40px;
+  text-align: center;
+  font-size: 0.9rem;
+  padding: 20px 10px;
+  background-color: #f0f0f0;
+  color: #555;
+}
+
+/* Motivation Page List Boxes */
+.list-box {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 30px;
+}
+
+.list-box li {
+  background-color: #e1ecf4;
+  padding: 18px 28px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.25s ease, background-color 0.3s;
+}
+
+.list-box li:hover {
+  background-color: blueviolet;
+  transform: translateY(-5px);
+}
+.list-box li:active {
+  background-color:rgb(255, 182, 193);
+}
+
+.list-box li a {
+  text-decoration: none;
+  color: #003366;
+  font-weight: bold;
+  font-size: 1rem;
+  display: block;
+}
+
+/* Back to Top Button */
+#back-to-top {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background-color: #003366;
+  color: #fff;
+  padding: 12px 18px;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  display: none;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  z-index: 1000;
+}
+
+#back-to-top:hover {
+  background-color: #ffcc00;
+  color: #003366;
+  transform: translateY(-3px);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  main {
+    padding: 15px;
+  }
+
+  header h1 {
+    font-size: 1.6rem;
+  }
+
+  .list-box li {
+    flex: 1 1 100%;
+    text-align: center;
+  }
+}
+
+/* Print-Friendly */
+@media print {
+  body {
+    background-color: #fff;
+    color: #000;
+  }
+  header, footer, .list-box {
+    display: none;
+  }
+  main {
+    box-shadow: none;
+    border-radius: 0;
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  background-color: #f5f8fa;
+  color: #222;
+  scroll-behavior: smooth;
+}
+
+/* Header */
+header {
+  background-color: #003366;
+  color: #fff;
+  padding: 30px 20px;
+  text-align: center;
+  position: relative;
+}
+
+header h1 {
+  font-size: 2rem;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+header h1:hover {
+  color: #ffcc00;
+}
+#blog {
+  margin-bottom: 50px;
+}
+
+#blog h2 {
+  font-size: 2rem;
+  color: #003366;
+  text-align: center;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+#blog h2::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background-color: #ffcc00;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+/* Individual Blog Post Cards */
+.blog-post {
+  background-color: #f0f4ff;
+  border-radius: 8px;
+  padding: 20px 25px;
+  margin-bottom: 25px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.blog-post:hover {
+  background-color: #e1e8ff;
+  transform: translateY(-5px);
+}
+
+.blog-post h3 {
+  color: #003366;
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+.blog-post em {
+  display: block;
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 12px;
+}
+
+.blog-post p {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+/* Read More Button */
+.blog-post a.read-more {
+  display: inline-block;
+  background-color: #003366;
+  color: #fff;
+  padding: 8px 15px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.blog-post a.read-more:hover {
+  background-color: #1380ff;
+  transform: translateY(-2px);
+}
+
+/* --- Individual Blog Post Pages --- */
+article {
+  background-color: #ffffff;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  margin-bottom: 30px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+article:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+article h2 {
+  color: #003366;
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+article em {
+  display: block;
+  color: #555;
+  font-size: 0.9rem;
+  margin-bottom: 15px;
+}
+
+article p {
+  margin-bottom: 15px;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+/* Back Link for Blog Post Pages */
+a {
+  text-decoration: none;
+  color: #003366;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #1380ff;
+}
+
+/* Footer */
+footer {
+  background-color: #003366;
+  color: #fff;
+  text-align: center;
+  padding: 15px 0;
+  margin-top: 40px;
+  font-size: 0.9rem;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  main {
+    padding: 0 15px;
+  }
+
+  article, .blog-post {
+    padding: 20px;
+  }
+
+  article h2, .blog-post h3 {
+    font-size: 1.5rem;
+  }
+}
