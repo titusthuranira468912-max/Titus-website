@@ -939,11 +939,6 @@ nav a {
   padding: 5px 10px;
 }
 
-/* Optional: add hover effect */
-.nav-links li a:hover {
-  background-color: #7B68EE; /* lighter purple */
-  border-radius: 5px;
-}
 @media (max-width: 1024px) {
   .nav-links {
     gap: 10px;
@@ -952,6 +947,7 @@ nav a {
     padding: 4px 8px;
   }
 }
+
 
 
 
