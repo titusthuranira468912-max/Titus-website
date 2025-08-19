@@ -954,29 +954,7 @@ nav a {
   cursor: pointer;
 }
 
-/* Mobile styling */
-@media (max-width: 768px) {
-  .nav-links {
-    display: block; /* hide links by default */
-    flex-direction: column;
-    width: 100%;
-    background-color: #4B0082;
-    margin-top: 10px;
-  }
 
-  .nav-links li {
-    text-align: center;
-    padding: 10px 0;
-  }
-
-  .nav-toggle {
-    display: block;
-  }
-}
-.nav-links.show {
-  display: flex;
-  flex-direction: column; /* for mobile */
-}
 
 
 
