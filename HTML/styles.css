@@ -887,20 +887,22 @@ footer {
 
 @media (max-width: 768px) {
   .navbar {
-    flex-direction: column; /* stack brand and links */
+    flex-direction: column;
     align-items: flex-start;
-    padding: 5px 10px; /* reduce navbar padding for small screens */
+    padding: 5px 10px 5px 10px; /* top right bottom left */
   }
 
   .nav-links {
-    flex-direction: column; /* stack links vertically */
+    flex-direction: column;
     width: 100%;
-    gap: 5px; /* reduce gap between links */
+    gap: 5px;
   }
 
   .nav-links li a {
-    padding: 5px 0; /* reduce link padding */
+    padding: 5px 0 5px 0; /* top right bottom left */
   }
 }
+
+
 
 
