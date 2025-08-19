@@ -890,52 +890,6 @@ footer {
   border-top-right-radius: 8px;
 }
 
-/* ============================
-   MOBILE NAV STYLES ONLY
-   Max width = 768px and below
-=============================== */
-@media (max-width: 768px) {
-  /* Hide nav links by default on small screens */
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    background-color: #333;
-    margin-top: 10px;
-  }
-
-  /* Show nav links only when checkbox is checked */
-  .nav-toggle:checked ~ .nav-links {
-    display: flex;
-  }
-
-  /* Hamburger icon visible only in mobile */
-  .hamburger {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    cursor: pointer;
-  }
-
-  .bar {
-    width: 25px;
-    height: 3px;
-    background-color: white;
-    transition: 0.3s;
-  }
-
-  /* Animate hamburger into X */
-  .nav-toggle:checked + .hamburger .bar:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
-  }
-  .nav-toggle:checked + .hamburger .bar:nth-child(2) {
-    opacity: 0;
-  }
-  .nav-toggle:checked + .hamburger .bar:nth-child(3) {
-    transform: rotate(-45deg) translate(5px, -5px);
-  }
-}
-
 
 
 
