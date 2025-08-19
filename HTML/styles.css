@@ -885,6 +885,52 @@ footer {
   border-top-right-radius: 8px;
 }
 
+/* ===== MOBILE NAV ONLY ===== */
+@media (max-width: 768px) {
+  /* Show hamburger, hide nav links */
+  .hamburger {
+    display: block;
+    font-size: 30px;
+    cursor: pointer;
+    user-select: none;
+    color: white;
+    float: right;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px; /* adjust if nav height is different */
+    right: 0;
+    width: 100%;
+    background-color: #222;
+    animation: slideDown 0.3s ease-in-out;
+    z-index: 1000;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .nav-links li {
+    border-top: 1px solid #444;
+    text-align: center;
+    padding: 12px 0;
+  }
+
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
 
 
 
