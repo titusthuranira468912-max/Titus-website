@@ -890,6 +890,16 @@ footer {
   border-top-right-radius: 8px;
 }
 
+      @media (max-width: 768px) {
+      .navbar {
+        position:fixed;
+        padding:10px;
+        
+      }
+        .navbar li {
+          margin-top:9px;
+        }
+      }
 
 
 
