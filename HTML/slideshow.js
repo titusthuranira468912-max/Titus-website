@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Click for full-screen modal
     slide.addEventListener('click', () => {
       modalImg.src = slide.src;
-      modal.style.display = 'flex';
+      modal.style.display = 'block';
       setTimeout(() => modal.style.opacity = 1, 10);
     });
 
@@ -112,3 +112,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
   startSlideShow();
 });
+
