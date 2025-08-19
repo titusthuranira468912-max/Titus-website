@@ -903,15 +903,17 @@ footer {
   }
 
   .nav-links {
-    display: none;
-    flex-direction: column;
-    position: static;
+    display: flex;
+    flex-direction: row;
+    position: absolute;
     top: 60px; /* adjust if nav height is different */
     right: 0;
     width: 100%;
     background-color: #222;
     animation: slideDown 0.3s ease-in-out;
     z-index: 1000;
+    justify-content:space-between;
+    gap:10px;
   }
 
   .nav-links.show {
@@ -935,6 +937,7 @@ footer {
     }
   }
 }
+
 
 
 
