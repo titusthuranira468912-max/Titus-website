@@ -944,6 +944,15 @@ nav a {
   background-color: #7B68EE; /* lighter purple */
   border-radius: 5px;
 }
+@media (max-width: 1024px) {
+  .nav-links {
+    gap: 10px;
+  }
+  .nav-links li a {
+    padding: 4px 8px;
+  }
+}
+
 
 
 
