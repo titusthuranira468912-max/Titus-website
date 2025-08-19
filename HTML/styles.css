@@ -896,9 +896,13 @@ footer {
   display: flex;
   flex-direction: row; /* 👈 makes links go in a row (side by side) */
   justify-content: space-between; /* optional: spread them out */
-  gap: 20px; /* optional: spacing between links */
+  gap: 20px; 
+  display: grid;
+  grid-auto-flow: column; /* 👈 forces row layout */
+  
 }
 }
+
 
 
 
