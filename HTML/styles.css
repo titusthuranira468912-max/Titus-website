@@ -885,27 +885,29 @@ footer {
   border-top-right-radius: 8px;
 }
 
+/* Small screens */
 @media (max-width: 768px) {
   .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-    height: 3cm;          /* fixed vertical height */
-    width: 100%;          /* full width */
-    padding: 5px 10px 5px 10px;
-    box-sizing: border-box; /* ensure padding doesn’t add extra height */
-    overflow: hidden;      /* prevents content from spilling if too many links */
+    flex-direction: row;       /* keep horizontal links */
+    align-items: center;
+    padding: 5px 10px;
+    width: 100%;
   }
 
   .nav-links {
-    flex-direction: column;
-    width: 100%;
-    gap: 5px;
+    flex-direction: row;       /* keep links horizontal */
+    gap: 10px;                 /* smaller gap on mobile */
+    justify-content: flex-start;
+    flex-wrap: wrap;           /* wrap links to next line if needed */
   }
 
   .nav-links li a {
-    padding: 5px 0 5px 0;  /* adjust link padding */
+    padding: 4px 8px;          /* smaller padding to fit links */
+    white-space: nowrap;       /* prevent text from breaking inside link */
   }
 }
+
+
 
 
 
