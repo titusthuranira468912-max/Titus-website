@@ -885,5 +885,22 @@ footer {
   border-top-right-radius: 8px;
 }
 
-/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column; /* stack brand and links */
+    align-items: flex-start;
+    padding: 5px 10px; /* reduce navbar padding for small screens */
+  }
+
+  .nav-links {
+    flex-direction: column; /* stack links vertically */
+    width: 100%;
+    gap: 5px; /* reduce gap between links */
+  }
+
+  .nav-links li a {
+    padding: 5px 0; /* reduce link padding */
+  }
+}
+
 
