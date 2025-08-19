@@ -921,10 +921,9 @@ nav a {
   justify-content: space-between;
   align-items: center;
   background-color: #4B0082;
-  padding: 10px 15px;
+  padding: 10px 20px;
 }
 
-/* Links horizontal on desktop */
 .nav-links {
   list-style: none;
   display: flex;
@@ -937,7 +936,6 @@ nav a {
   font-weight: bold;
 }
 
-/* Hamburger hidden on desktop */
 .nav-toggle {
   display: none;
   font-size: 28px;
@@ -945,30 +943,24 @@ nav a {
   cursor: pointer;
 }
 
-/* Mobile styles */
 @media (max-width: 768px) {
   .nav-toggle {
-    display: block; /* show hamburger */
+    display: block;
   }
-
   .nav-links {
-    display: none; /* hide links by default */
+    display: none;
     flex-direction: column;
     width: 100%;
     margin-top: 10px;
   }
-
   .nav-links li {
     text-align: center;
     padding: 10px 0;
   }
-
   .nav-links.show {
-    display: flex; /* show links when hamburger clicked */
+    display: flex;
   }
 }
-
-
 
 
 
