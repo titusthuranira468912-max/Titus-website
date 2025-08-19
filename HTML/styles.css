@@ -916,26 +916,15 @@ nav a {
   font-weight: bold;
 }
 
-/* Media query for small screens */
-@media (max-width: 768px) {
-  nav {
-    flex-direction: column;  /* stack links vertically */
-    align-items: flex-start;
-  }
-
-  nav a {
-    margin: 5px 0;
-  }
-}
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #4B0082; /* Blueviolet */
-  padding: 10px 10px;
-  max-height:100px;
+  background-color: #4B0082;
+  padding: 10px 20px;
 }
 
+/* Links horizontal on desktop */
 .nav-links {
   list-style: none;
   display: flex;
@@ -948,40 +937,38 @@ nav a {
   font-weight: bold;
 }
 
+/* Hamburger hidden on desktop */
 .nav-toggle {
   display: none;
   font-size: 28px;
   color: white;
   cursor: pointer;
 }
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #4B0082; /* Blueviolet */
-  padding: 10px 20px;
-  flex-wrap: wrap; /* allows nav links to move to next line if needed */
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: block; /* show hamburger */
+  }
+
+  .nav-links {
+    display: none; /* hide links by default */
+    flex-direction: column;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .nav-links li {
+    text-align: center;
+    padding: 10px 0;
+  }
+
+  .nav-links.show {
+    display: flex; /* show links when hamburger clicked */
+  }
 }
 
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 15px;
-  flex-wrap: wrap; /* automatically wraps links instead of overlapping */
-}
 
-.nav-links li a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  padding: 5px 10px;
-}
-
-/* Optional: add hover effect */
-.nav-links li a:hover {
-  background-color: #7B68EE; /* lighter purple */
-  border-radius: 5px;
-}
 
 
 
