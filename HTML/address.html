@@ -58,9 +58,19 @@
     </section>
   </main>
   <script src="mobile-nav.js"></script>
+  <script>
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('nav-links');
+
+  hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('show');
+  });
+</script>
+
 
 </body>
 </html>
+
 
 
 
