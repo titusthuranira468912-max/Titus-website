@@ -932,7 +932,7 @@ nav a {
   justify-content: space-between;
   align-items: center;
   background-color: #4B0082; /* Blueviolet */
-  padding: 10px 20px;
+  padding: 10px 10px;
 }
 
 .nav-links {
@@ -957,7 +957,7 @@ nav a {
 /* Mobile styling */
 @media (max-width: 768px) {
   .nav-links {
-    display: none; /* hide links by default */
+    display: block; /* hide links by default */
     flex-direction: column;
     width: 100%;
     background-color: #4B0082;
@@ -977,5 +977,6 @@ nav a {
   display: flex;
   flex-direction: column; /* for mobile */
 }
+
 
 
