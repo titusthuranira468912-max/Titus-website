@@ -893,15 +893,12 @@ footer {
 /* ===== MOBILE NAV ONLY ===== */
 @media (max-width: 768px) {
 .nav-links {
-  display: flex;
-  flex-direction: row; /* 👈 makes links go in a row (side by side) */
-  justify-content: space-between; /* optional: spread them out */
-  gap: 20px; 
   display: grid;
   grid-auto-flow: column; /* 👈 forces row layout */
-  
+  gap: 20px;
 }
 }
+
 
 
 
