@@ -905,7 +905,7 @@ footer {
   .nav-links {
     display: none;
     flex-direction: column;
-    position: absolute;
+    position: static;
     top: 60px; /* adjust if nav height is different */
     right: 0;
     width: 100%;
@@ -935,6 +935,7 @@ footer {
     }
   }
 }
+
 
 
 
