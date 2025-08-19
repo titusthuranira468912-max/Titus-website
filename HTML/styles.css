@@ -975,5 +975,7 @@ nav a {
 }
 .nav-links.show {
   display: flex;
+  flex-direction: column; /* for mobile */
 }
+
 
