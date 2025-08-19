@@ -933,6 +933,7 @@ nav a {
   align-items: center;
   background-color: #4B0082; /* Blueviolet */
   padding: 10px 10px;
+  max-height:100px;
 }
 
 .nav-links {
@@ -953,6 +954,7 @@ nav a {
   color: white;
   cursor: pointer;
 }
+
 
 
 
