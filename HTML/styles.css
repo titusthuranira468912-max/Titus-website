@@ -930,6 +930,27 @@ footer {
     display: none;
   }
 }
+/* ✅ FORCE-HIDE DESKTOP NAV BAR ON SMALL SCREENS */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none !important; /* ← Strongest override */
+    visibility: hidden;
+    height: 0;
+    overflow: hidden;
+  }
+}
+/* ✅ FORCE-HIDE MOBILE NAV ON DESKTOP */
+@media (min-width: 769px) {
+  .mobile-nav-boxes {
+    display: none !important;
+  }
+}
+@media (max-width: 768px) {
+  nav {
+    display: none !important;
+  }
+}
+
 
 
 
