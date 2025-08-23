@@ -1,126 +1,113 @@
-body, html {
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  font-family: sans-serif;
-  opacity: 0;
-  animation: fadeIn 1.8s ease-in-out forwards;
+/* ===== General Clock Layout ===== */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: #111; /* dark theme default */
+    color: #fff;
 }
 
-body, html {
-  background-color: #000; /* fallback if video fails */
+#clock-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-
-@keyframes fadeIn {
-  to { opacity: 1; }
+/* Center logo / name */
+#clock-center {
+    position: absolute;
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;
 }
 
-#bg-video {
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  min-width: 100%;
-  min-height: 100%;
-  z-index: -1;
-  object-fit: cover;
-  filter: brightness(0.3);
-}
-
-.clock-container {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  opacity: 0;
-  animation: fadeInClock 2s ease-in-out 0.5s forwards;
-}
-
-@keyframes fadeInClock {
-  to { opacity: 1; }
-}
-
-.clock {
-  position: relative;
-  width: 580px;
-  height: 580px;
-  border: 8px solid #fff;
-  border-radius: 50%;
-  margin: 0 auto;
-  box-shadow: 0 0 40px rgba(255,255,255,0.2);
-}
-
-.hand {
-  position: absolute;
-  bottom: 50%;
-  left: 50%;
-  transform-origin: bottom;
-  transform: translateX(-50%) rotate(0deg);
-  background: white;
-  border-radius: 3px;
-}
-
-.hour-hand { width: 6px; height: 100px; background: #ffcc00; }
-.minute-hand { width: 4px; height: 140px; background: #00ffff; }
-.second-hand { width: 2px; height: 170px; background: #ff0066; }
-
-.center-name {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
-  font-weight: bold;
-  font-size: 18px;
-  pointer-events: none;
-}
-
+/* Clock links (12 clickable points) */
 .clock-link {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: rotate(calc(30deg * var(--i))) translate(-50%, -190px) rotate(calc(-30deg * var(--i)));
-  transform-origin: center;
-  width: 60px;
-  color: white;
-  font-size: 13px;
-  font-weight: bold;
-  text-decoration: none;
-  text-shadow: 0 0 4px black;
-  transition: 0.3s;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.1);
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
 }
 
-.clock-link:hover,
-.clock-link.glow {
-  color: #ffcc00;
-  animation: glowPulse 2s ease-in-out infinite;
+/* Highlight at 6 PM */
+.clock-link.highlight {
+    color: #ff0;
+    background: #333;
+    box-shadow: 0 0 15px #ff0;
 }
 
-@keyframes glowPulse {
-  0%, 100% {
-    text-shadow: 0 0 10px #ffaa00, 0 0 20px #ffaa00, 0 0 30px #ffaa00;
-  }
-  50% {
-    text-shadow: 0 0 20px #ffdd55, 0 0 30px #ffee77, 0 0 40px #fff199;
-  }
+/* Back button */
+#back-home {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 10px 15px;
+    background: #222;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
 }
 
-.back-button,
+#back-home:hover {
+    background: #444;
+}
+
+/* Theme toggle button */
 #theme-toggle {
-  margin-top: 20px;
-  padding: 10px 20px;
-  font-weight: bold;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 10px 15px;
+    background: #222;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
 }
 
-.back-button { background: white; color: black; }
-#theme-toggle { background: black; color: white; margin-left: 10px; }
+#theme-toggle:hover {
+    background: #444;
+}
 
-.clock-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+/* Dark / Light Themes */
+body.light-theme {
+    background: #f5f5f5;
+    color: #111;
+}
+
+body.light-theme .clock-link {
+    background: rgba(0,0,0,0.1);
+    color: #111;
+}
+
+body.light-theme .clock-link.highlight {
+    color: #ff9800;
+    background: #ddd;
+    box-shadow: 0 0 15px #ff9800;
+}
+
+/* ===== Responsive (Mobile) ===== */
+@media (max-width: 600px) {
+    #clock-center {
+        font-size: 1.8rem;
+    }
+    .clock-link {
+        width: 45px;
+        height: 45px;
+        font-size: 0.8rem;
+    }
 }
