@@ -1,23 +1,21 @@
-// ==== Clock Variables ====
+// ==== Elements ====
 const clockLinks = document.querySelectorAll(".clock-link");
 const clockCenter = document.querySelector("#clock-center");
 const backButton = document.querySelector("#back-home");
+const themeToggle = document.querySelector("#theme-toggle");
 const body = document.body;
 
-// Ticking sound
-const tickSound = new Audio("tick.mp3");
-
-// Theme toggle
-const themeToggle = document.querySelector("#theme-toggle");
-
-// ==== Clock Update Function ====
+// ==== Update Clock ====
 function updateClock() {
     const now = new Date();
     const hours = now.getHours();
     const minutes = now.getMinutes();
     const seconds = now.getSeconds();
 
-    
+    // Optional: Digital display in center
+    if (clockCenter) {
+        clockCenter.textContent = `${hours.toString().padStart(2,'0')}:${minutes.toString().padStart(2,'0')}:${seconds.toString().padStart(2,'0')}`;
+    }
 
     // Highlight 6 PM links
     if (hours === 18) {
@@ -25,20 +23,17 @@ function updateClock() {
     } else {
         clockLinks.forEach(link => link.classList.remove("highlight"));
     }
+}
 
-    // Rotate links around clock (if using rotation animation)
-    clockLinks.forEach((link, i) => {
-        const angle = (i * 30) - 90; // 12 links, 360/12 = 30deg
-        const radius = 150; // adjust radius as needed
-        const x = radius * Math.cos(angle * Math.PI / 180);
-        const y = radius * Math.sin(angle * Math.PI / 180);
-        link.style.transform = `translate(${x}px, ${y}px)`;
+// ==== Initial Call & Interval ====
+updateClock();
+setInterval(updateClock, 1000);
+
+// ==== Back Home Button ====
+if (backButton) {
+    backButton.addEventListener("click", () => {
+        window.location.href = "index.html"; // change if needed
     });
-
-    // Update center clock text (optional digital display)
-    if (clockCenter) {
-        clockCenter.textContent = `${hours.toString().padStart(2,'0')}:${minutes.toString().padStart(2,'0')}:${seconds.toString().padStart(2,'0')}`;
-    }
 }
 
 // ==== Theme Toggle ====
@@ -48,16 +43,3 @@ if (themeToggle) {
         body.classList.toggle("light-theme");
     });
 }
-
-// ==== Back Home Button ====
-if (backButton) {
-    backButton.addEventListener("click", () => {
-        window.location.href = "index.html"; // change if your homepage URL differs
-    });
-}
-
-// ==== Initial Call ====
-updateClock();
-
-// ==== Update Every Second ====
-setInterval(updateClock, 1000);
