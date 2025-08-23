@@ -17,9 +17,7 @@ function updateClock() {
     const minutes = now.getMinutes();
     const seconds = now.getSeconds();
 
-    // Tick sound
-    tickSound.currentTime = 0;
-    tickSound.play();
+    
 
     // Highlight 6 PM links
     if (hours === 18) {
