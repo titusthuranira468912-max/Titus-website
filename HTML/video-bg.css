@@ -7,6 +7,11 @@ body, html {
   animation: fadeIn 1.8s ease-in-out forwards;
 }
 
+body, html {
+  background-color: #000; /* fallback if video fails */
+}
+
+
 @keyframes fadeIn {
   to { opacity: 1; }
 }
