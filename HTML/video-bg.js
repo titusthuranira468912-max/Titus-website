@@ -1,5 +1,5 @@
 // ==== Clock Variables ====
-const hourLinks = document.querySelectorAll(".hour-link");
+const clockLinks = document.querySelectorAll(".clock-link");
 const clockCenter = document.querySelector("#clock-center");
 const backButton = document.querySelector("#back-home");
 const body = document.body;
@@ -23,13 +23,13 @@ function updateClock() {
 
     // Highlight 6 PM links
     if (hours === 18) {
-        hourLinks.forEach(link => link.classList.add("highlight"));
+        clockLinks.forEach(link => link.classList.add("highlight"));
     } else {
-        hourLinks.forEach(link => link.classList.remove("highlight"));
+        clockLinks.forEach(link => link.classList.remove("highlight"));
     }
 
     // Rotate links around clock (if using rotation animation)
-    hourLinks.forEach((link, i) => {
+    clockLinks.forEach((link, i) => {
         const angle = (i * 30) - 90; // 12 links, 360/12 = 30deg
         const radius = 150; // adjust radius as needed
         const x = radius * Math.cos(angle * Math.PI / 180);
