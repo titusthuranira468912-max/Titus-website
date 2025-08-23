@@ -63,18 +63,22 @@ body.time-bar-light {
 
 .time-bar-link {
   position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: rotate(calc(30deg * var(--i)))
+             translate(-50%, -190px)
+             rotate(calc(-30deg * var(--i)));
+  transform-origin: center;
   width: 60px;
   text-align: center;
   text-decoration: none;
   font-weight: bold;
   font-size: 14px;
   color: inherit;
-  transform: rotate(calc(30deg * var(--i))) translate(40%) rotate(calc(-30deg * var(--i)));
-  top: 50%;
-  left: 50%;
-  transform-origin: center;
   transition: all 0.4s ease;
+  z-index: 2;
 }
+
 .time-bar-link:hover,
 .time-bar-link.time-bar-glow {
   color: #ffcc00;
