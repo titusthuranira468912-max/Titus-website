@@ -66,7 +66,7 @@ body.time-bar-light {
   top: 50%;
   left: 50%;
   transform: rotate(calc(30deg * var(--i)))
-             translate(-50%, -190px)
+             translate(-50%, -160px)
              rotate(calc(-30deg * var(--i)));
   transform-origin: center;
   width: 60px;
