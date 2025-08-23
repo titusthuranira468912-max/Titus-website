@@ -1,1 +1,116 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-family: sans-serif;
+  opacity: 0;
+  animation: fadeIn 1.8s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+#bg-video {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1;
+  object-fit: cover;
+  filter: brightness(0.3);
+}
+
+.clock-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  opacity: 0;
+  animation: fadeInClock 2s ease-in-out 0.5s forwards;
+}
+
+@keyframes fadeInClock {
+  to { opacity: 1; }
+}
+
+.clock {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  border: 8px solid #fff;
+  border-radius: 50%;
+  margin: 0 auto;
+  box-shadow: 0 0 40px rgba(255,255,255,0.2);
+}
+
+.hand {
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  transform-origin: bottom;
+  transform: translateX(-50%) rotate(0deg);
+  background: white;
+  border-radius: 3px;
+}
+
+.hour-hand { width: 6px; height: 100px; background: #ffcc00; }
+.minute-hand { width: 4px; height: 140px; background: #00ffff; }
+.second-hand { width: 2px; height: 170px; background: #ff0066; }
+
+.center-name {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  pointer-events: none;
+}
+
+.clock-link {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: rotate(calc(30deg * var(--i))) translate(-50%, -190px) rotate(calc(-30deg * var(--i)));
+  transform-origin: center;
+  width: 60px;
+  color: white;
+  font-size: 13px;
+  font-weight: bold;
+  text-decoration: none;
+  text-shadow: 0 0 4px black;
+  transition: 0.3s;
+}
+
+.clock-link:hover,
+.clock-link.glow {
+  color: #ffcc00;
+  animation: glowPulse 2s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+  0%, 100% {
+    text-shadow: 0 0 10px #ffaa00, 0 0 20px #ffaa00, 0 0 30px #ffaa00;
+  }
+  50% {
+    text-shadow: 0 0 20px #ffdd55, 0 0 30px #ffee77, 0 0 40px #fff199;
+  }
+}
+
+.back-button,
+#theme-toggle {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.back-button { background: white; color: black; }
+#theme-toggle { background: black; color: white; margin-left: 10px; }
 
