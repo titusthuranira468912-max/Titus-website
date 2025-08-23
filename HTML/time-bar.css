@@ -1,1 +1,137 @@
+body.time-bar-dark {
+  background: radial-gradient(circle, #101010, #1e1e2f);
+  color: white;
+}
+body.time-bar-light {
+  background: radial-gradient(circle, #eeeeee, #dddddd);
+  color: black;
+}
+
+#time-bar-splash {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  color: #fff;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  animation: fadeOut 1s ease-in-out 3s forwards;
+}
+
+#time-bar-splash h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+#time-bar-splash p {
+  font-size: 1.2rem;
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.time-bar-container {
+  position: relative;
+  width: 90vmin;
+  height: 90vmin;
+  max-width: 500px;
+  max-height: 500px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.time-bar-clock {
+  width: 100%;
+  height: 100%;
+  border: 10px solid currentColor;
+  border-radius: 50%;
+  position: relative;
+  background: transparent;
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.15);
+}
+
+.time-bar-link {
+  position: absolute;
+  width: 60px;
+  text-align: center;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 14px;
+  color: inherit;
+  transform: rotate(calc(30deg * var(--i))) translate(40%) rotate(calc(-30deg * var(--i)));
+  top: 50%;
+  left: 50%;
+  transform-origin: center;
+  transition: all 0.4s ease;
+}
+.time-bar-link:hover,
+.time-bar-link.time-bar-glow {
+  color: #ffcc00;
+  text-shadow: 0 0 10px #ffcc00, 0 0 20px #ffaa00;
+}
+
+.time-bar-hour-hand,
+.time-bar-minute-hand,
+.time-bar-second-hand {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-origin: bottom;
+  border-radius: 3px;
+  transition: transform 0.5s ease-in-out;
+}
+.time-bar-hour-hand {
+  width: 6px;
+  height: 25%;
+  background: #ffcc00;
+}
+.time-bar-minute-hand {
+  width: 4px;
+  height: 35%;
+  background: #00ffff;
+}
+.time-bar-second-hand {
+  width: 2px;
+  height: 40%;
+  background: #ff0066;
+}
+
+.time-bar-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: bold;
+  font-size: 16px;
+  pointer-events: none;
+}
+
+.time-bar-back,
+#time-bar-toggle {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background: white;
+  color: black;
+  transition: background 0.3s;
+}
+.time-bar-back:hover,
+#time-bar-toggle:hover {
+  background: #ffcc00;
+  color: black;
+}
 
