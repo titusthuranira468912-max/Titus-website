@@ -119,3 +119,8 @@ body, html {
 .back-button { background: white; color: black; }
 #theme-toggle { background: black; color: white; margin-left: 10px; }
 
+.clock-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
