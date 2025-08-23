@@ -1,1 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Titus Thuranira - Time Bar Navigation</title>
+  <link rel="stylesheet" href="time-bar.css" />
+</head>
+<body class="time-bar-dark">
+  <!-- Splash Screen -->
+  <div id="time-bar-splash">
+    <h1>Welcome to Titus Thuranira</h1>
+    <p>Loading Time Navigation...</p>
+  </div>
+
+  <!-- Clock Interface -->
+  <div class="time-bar-container" id="time-bar-main" style="display: none;">
+    <div class="time-bar-clock">
+      <div class="time-bar-hour-hand"></div>
+      <div class="time-bar-minute-hand"></div>
+      <div class="time-bar-second-hand"></div>
+
+      <div class="time-bar-center">Titus Thuranira</div>
+
+      <a href="home.html" class="time-bar-link" style="--i:1;">Home</a>
+      <a href="about.html" class="time-bar-link" style="--i:2;">About</a>
+      <a href="resume.html" class="time-bar-link" style="--i:3;">Resume</a>
+      <a href="motivation.html" class="time-bar-link" style="--i:4;">Motivation</a>
+      <a href="bible.html" class="time-bar-link" style="--i:5;">Bible App</a>
+      <a href="photos.html" class="time-bar-link" style="--i:6;">Photos</a>
+      <a href="skills.html" class="time-bar-link" style="--i:7;">Skills</a>
+      <a href="testimonials.html" class="time-bar-link" style="--i:8;">Testimonials</a>
+      <a href="contact.html" class="time-bar-link" style="--i:9;">Contact</a>
+      <a href="blog.html" class="time-bar-link" style="--i:10;">Blog</a>
+      <a href="studies.html" class="time-bar-link" style="--i:11;">Bible Studies</a>
+      <a href="address.html" class="time-bar-link" style="--i:12;">Address</a>
+    </div>
+
+    <!-- Buttons -->
+    <a href="home.html" class="time-bar-back">← Back to Home</a>
+    <button id="time-bar-toggle">🌙 Light/Dark</button>
+
+    <audio id="time-bar-tick" src="tick.mp3" preload="auto"></audio>
+  </div>
+
+  <script src="time-bar.js"></script>
+</body>
+</html>
 
