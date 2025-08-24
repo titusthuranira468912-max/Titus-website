@@ -1,45 +1,37 @@
-// Select elements
-const clockLinks = document.querySelectorAll(".clock-link");
-const clockCenter = document.querySelector("#clock-center");
-const backButton = document.querySelector("#back-home");
-const themeToggle = document.querySelector("#theme-toggle");
-const body = document.body;
+const hourHand = document.querySelector('.hour-hand');
+const minuteHand = document.querySelector('.minute-hand');
+const secondHand = document.querySelector('.second-hand');
+const tickSound = document.getElementById('tick-sound');
+const links = document.querySelectorAll('.clock-link');
+const themeToggle = document.getElementById('theme-toggle');
 
-// Update clock function
 function updateClock() {
-    const now = new Date();
-    const hours = now.getHours();
-    const minutes = now.getMinutes();
-    const seconds = now.getSeconds();
+  const now = new Date();
+  const hour = now.getHours() % 12;
+  const minute = now.getMinutes();
+  const second = now.getSeconds();
 
-    // Optional digital display in center
-    if (clockCenter) {
-        clockCenter.textContent = `${hours.toString().padStart(2,'0')}:${minutes.toString().padStart(2,'0')}:${seconds.toString().padStart(2,'0')}`;
-    }
+  const hourDeg = (hour + minute / 60) * 30;
+  const minuteDeg = (minute + second / 60) * 6;
+  const secondDeg = second * 6;
 
-    // Highlight links at 6 PM
-    if (hours === 18) {
-        clockLinks.forEach(link => link.classList.add("highlight"));
-    } else {
-        clockLinks.forEach(link => link.classList.remove("highlight"));
-    }
+  hourHand.style.transform = `translateX(-50%) rotate(${hourDeg}deg)`;
+  minuteHand.style.transform = `translateX(-50%) rotate(${minuteDeg}deg)`;
+  secondHand.style.transform = `translateX(-50%) rotate(${secondDeg}deg)`;
+
+  tickSound.play();
+
+  const fullHour = now.getHours();
+  if (fullHour >= 18 || fullHour < 6) {
+    links.forEach(link => link.classList.add('glow'));
+  } else {
+    links.forEach(link => link.classList.remove('glow'));
+  }
 }
 
-// Initial call + update every second
-updateClock();
 setInterval(updateClock, 1000);
+updateClock();
 
-// Back button
-if (backButton) {
-    backButton.addEventListener("click", () => {
-        window.location.href = "index.html"; // change to your homepage
-    });
-}
-
-// Theme toggle
-if (themeToggle) {
-    themeToggle.addEventListener("click", () => {
-        body.classList.toggle("dark-theme");
-        body.classList.toggle("light-theme");
-    });
-}
+themeToggle.addEventListener('click', () => {
+  document.body.classList.toggle('dark-theme');
+});
