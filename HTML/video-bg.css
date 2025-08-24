@@ -38,8 +38,8 @@ body, html {
 
 .clock {
   position: relative;
-  width: 400px;
-  height: 400px;
+  width: 580px;
+  height: 580px;
   border: 8px solid #fff;
   border-radius: 50%;
   margin: 0 auto;
