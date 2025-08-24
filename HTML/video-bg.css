@@ -19,7 +19,7 @@ body, html {
   min-height: 100%;
   z-index: -1;
   object-fit: cover;
-  filter: brightness(0.3);
+  filter: brightness(0.5);
 }
 
 .clock-container {
@@ -113,3 +113,5 @@ body, html {
 
 .back-button { background: white; color: black; }
 #theme-toggle { background: black; color: white; margin-left: 10px; }
+
+
