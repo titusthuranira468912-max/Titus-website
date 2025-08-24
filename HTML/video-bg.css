@@ -111,8 +111,18 @@ body, html {
   cursor: pointer;
 }
 
-.back-button { background: white; color: black; }
+.back-button { 
+           background: #ffffff;
+  color: #000000;
+             transition: background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+             }
 #theme-toggle { background: black; color: white; margin-left: 10px; }
+
+.back-button:hover {
+  background: #f0f0f0;       /* Light gray for professional look */
+  color: #111111;             /* Slightly darker text */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2); /* Subtle shadow on hover */
+}
 
 
 /* ===== Mobile Clock Styles ===== */
