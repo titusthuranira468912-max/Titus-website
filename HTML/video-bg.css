@@ -115,3 +115,40 @@ body, html {
 #theme-toggle { background: black; color: white; margin-left: 10px; }
 
 
+/* ===== Mobile Responsive Clock ===== */
+@media (max-width: 600px) {
+
+    /* Reduce size of center logo / time */
+    #clock-center {
+        font-size: 1.5rem;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    /* Shrink clock links */
+    .clock-link {
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        font-size: 0.8rem;
+
+        /* Reduce radius of circle */
+        transform: rotate(calc(30deg * var(--i))) translate(100px) rotate(calc(-30deg * var(--i)));
+    }
+
+    /* Back / theme buttons */
+    #back-home, #theme-toggle {
+        padding: 8px 12px;
+        font-size: 0.9rem;
+        top: 15px;
+    }
+
+    #back-home { left: 10px; }
+    #theme-toggle { right: 10px; }
+
+    /* Optional: make highlights more visible on small screens */
+    .clock-link.highlight {
+        text-shadow: 0 0 8px #ff0;
+    }
+}
