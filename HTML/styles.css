@@ -233,6 +233,7 @@ button:hover {
     position: static;
     margin-bottom: 10px;
     text-align: center;
+    background-color:#FFA500;
   }
 }
 .bible-inputs input, .bible-inputs button { margin-right: 5px; padding: 6px; }
@@ -964,6 +965,7 @@ footer {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Optional: subtle shadow */
   }
 }
+
 
 
 
